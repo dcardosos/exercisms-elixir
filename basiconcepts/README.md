@@ -48,5 +48,57 @@ There's the short way:
 ```elixir
 variable = &(&1 + 1)
 ```
+
+## Lists
+
+- denoted by square brackets 
+- can hold items of any type
+- linked list is different, the first item in the list is referred as the *head* and the remaining list of items is called the *tail* 
+- list operatores never modify the existing list, always return a new list
+- Elixir data structures are *immutable*
+- 
+
+```elixir
+# [1] represented in [head | tail] notation
+[1 | []]
+
+# [1,2,3] represented in [head | tail] notation
+[1 | [2 | [3 | []]]]
+
+## to see the head and the tail
+
+list = [1, 2, 3]
+hd(list) 
+# => 1
+tl(list) 
+# => [2, 3]
+```
+
+We can use this format to prepend elemnts to a list, for example:
+
+```elixir
+list = [1, 2]
+
+[3, 2, 1] = [3 | list]
+# => true
+```
+### Concatenation and subctration
+
+```elixir
+[1, 2, 3] ++ [4, 5, 6] # and
+
+[1, 2, 3] -- [1, 3]
+```
+
+- if you want to see information about a value in IEx, use `i`, like `i 'hello'`.
+
+- a string like `'hello'` is a list of integers (`[104, 101, 108, 108, 111]`), because Elixir sees single quote as a list of printable ASCII numbers, so print as a charlist.
+
+- single-quote is different from double-quoted, the fist is a charlist and the second are strings
+
+```elixir
+"hello" == 'hello'
+#=> false
+```
 ## Others things
 - `Kernel` module has functions and macros, is Elixir's default environment.
