@@ -100,5 +100,52 @@ list = [1, 2]
 "hello" == 'hello'
 #=> false
 ```
+
+## Atom
+
+- type represents a fixed constant
+- the value is simply its own name
+- give us a type-safe way to interact with data
+- its like a symbols in others languages
+- often they are used to express the satate of an operation, such as `:ok` and `:error`
+
+```elixir
+variable = :an_atom
+```
+
+## Case an cond
+
+### 1. Case
+
+- compare a value against many patterns until we find a matching one
+
+```elixir
+case {1, 2, 3} do
+  {4, 5, 6} ->
+    "This caluse won't  match"
+  {1, x, 3} ->
+    "This clause will match and bind x to 2 in this clause"
+  _ ->
+    "This clause would match any value"
+end
+```
+
+### 2. Cond
+- check different conditions aht find the first one that does not evaluate to `nil` or `false`
+- equivalent to else if
+
+```elixir
+cond do
+  2 + 2 = 5 ->
+    "This will not be true"
+  2 * 2 == 3 ->
+    "Nor this"
+  1 + 1 == 2 ->
+    "But his will"
+  true -> 
+    "This is always true (equivalent to else)"
+end
+```
+
 ## Others things
 - `Kernel` module has functions and macros, is Elixir's default environment.
