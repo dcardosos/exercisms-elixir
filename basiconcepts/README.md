@@ -27,9 +27,6 @@ end
 
 ```
 
-## Multiple Clause 
-
-- 
 ## Default values
 
 - default values are defined by `\\`
@@ -59,6 +56,8 @@ IO.puts Concat.join("Hello")               #=> Hello
 - used to prevent Elixir from invoking functions based on evaluation of the arguments by guard functions
 - begin with the `when` keyword
 - are special functions which: must be pure and not mutate any global states and must returns strict `true` or `false` values
+
+
 ## Anonymous functions
 
 - can be assigned to variables
@@ -179,5 +178,29 @@ cond do
 end
 ```
 
+## Pattern matching
+
+- `=` symbol is a match operator
+- rigth side: pattern, left side: value
+
+```elixir
+x = 1
+1 = x
+```
+
+## Tuples
+
+- created using curly braces
+- elements can be accessed using the `elem/2` built-in function
+- tuple organizes data, holding a fixed number of items of any type
+- often used for memory read-intensive operations
+- and often used to represent grouped information, like `Float.ration(0.25) # => {1, 4}
+```elixir
+tuple = {1, :a, "hello"}
+
+elem(tuple, 3)
+# => "hello"
+```
 ## Others things
 - `Kernel` module has functions and macros, is Elixir's default environment.
+
