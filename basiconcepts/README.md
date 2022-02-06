@@ -27,6 +27,38 @@ end
 
 ```
 
+## Multiple Clause 
+
+- 
+## Default values
+
+- default values are defined by `\\`
+- with functions with multiple clauses, it is required to created a funcion head, without a body, for declaring defaults
+
+```elixir
+defmodule Concat do
+  # A function head declaring defaults
+  def join(a, b \\ nil, sep \\ " ")
+
+  def join(a, b, _sep) when is_nil(b) do
+    a
+  end
+
+  def join(a, b, sep) do
+    a <> sep <> b
+  end
+end
+
+IO.puts Concat.join("Hello", "world")      #=> Hello world
+IO.puts Concat.join("Hello", "world", "_") #=> Hello_world
+IO.puts Concat.join("Hello")               #=> Hello
+```
+
+## Guards
+
+- used to prevent Elixir from invoking functions based on evaluation of the arguments by guard functions
+- begin with the `when` keyword
+- are special functions which: must be pure and not mutate any global states and must returns strict `true` or `false` values
 ## Anonymous functions
 
 - can be assigned to variables
