@@ -194,13 +194,23 @@ x = 1
 - elements can be accessed using the `elem/2` built-in function
 - tuple organizes data, holding a fixed number of items of any type
 - often used for memory read-intensive operations
-- and often used to represent grouped information, like `Float.ration(0.25) # => {1, 4}
+- and often used to represent grouped information, like `Float.ration(0.25) # => {1, 4Flo}
 ```elixir
 tuple = {1, :a, "hello"}
 
 elem(tuple, 3)
 # => "hello"
 ```
+
+## Strings
+
+- delimited by double quotes, only
+- can be concatenated using `<>/2` operator, like `"Welcome to" <> " " <> "New York"` 
+- interpolation using the `#{}` syntax, like `"6 * 7 = #{6 * 7}"`
+- new line with `\n`
+- print a string using `IO.puts/1` function that returns `:ok` after printing
+- 
+
 ## Others things
 - `Kernel` module has functions and macros, is Elixir's default environment.
 
