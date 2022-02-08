@@ -79,6 +79,12 @@ There's the short way:
 ```elixir
 variable = &(&1 + 1)
 ```
+## Recursion
+- needs a *base case* and a *recursive case*
+- base case returns a value without calling the function again
+- recursive case calls the function again and stop when match with the base case
+- each case is written in a clause
+
 
 ## Lists
 
