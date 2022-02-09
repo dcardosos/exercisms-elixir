@@ -215,7 +215,40 @@ elem(tuple, 3)
 - interpolation using the `#{}` syntax, like `"6 * 7 = #{6 * 7}"`
 - new line with `\n`
 - print a string using `IO.puts/1` function that returns `:ok` after printing
-- 
+
+## Maps
+
+- data structure for storing information in key-value pairs, like dictionaries in python
+- do not guarantee the order of their entries when accessed or returned
+- map is declared with `%{}`
+- add items to a map, we can use two forms: 
+
+```elixir
+# if the key is an atom
+%{atom_key: 1}
+
+# if the key is a different type
+%{1 => :atom_value}
+
+%{"first_form" => :a, atom_form: :b}
+```
+- when map is used in a patter, it will always match on a subset of the given value
+- use `map.fild` syntax and pattern matching instead of the function in the `Map` module
+
+## Modules attributes
+### As constants
+- to make a value more visible or reusable
+
+```elixir
+defmodule Example do
+  # Defines the attribute as the value 1
+  @constant_number 1
+  def example_value() do
+    # Returns the value 1
+    @constant_number
+  end
+end
+```
 
 ## Others things
 - `Kernel` module has functions and macros, is Elixir's default environment.
